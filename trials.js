@@ -36,13 +36,23 @@ function showLikes (likesArray) {
 /////////////////////////////////////////////////////////
 // Display Favorites
 const favorites = {
+	'food' : 'pebbles',
+	'tree' : 'palm',
+	'quote' : 'Bock bock bock',
+	'color' : 'green'
   // Add more favorites
 };
 
+
 // Add function to print favorites
 
-
-
+function showFavorites (favoritesObject) {
+	console.log('FAVORITES:');
+	for (let [i, k] of Object.entries(favoritesObject)) {
+		console.log(`${i}: ${k}`);
+	}
+}
+showFavorites(favorites)
 /////////////////////////////////////////////////////////
 // PART 2
 
@@ -50,24 +60,49 @@ const favorites = {
 // Add Transactions
 
 // Add function to add transaction
+function addTransaction(date, amount, currentTransactions) {
+	currentTransactions[date] = amount
+}
 
 // Create object to hold transactions
 
-// Add transactions to object
+const transactions = {
+	'may2': -500,
+	'may13': +1200,
+	'may15': -100,
+	'may21': -359,
+	'may29': +2200
+}
 
 
 /////////////////////////////////////////////////////////
 // Get Balance Status
 
 // Add function to calculate balance status
-
-
+function getBalanceStatus(currentBalance) {
+	if (currentBalance < 0) {
+		console.log('YOU ARE OVERDRAWN');
+	} else if (currentBalance < 20) {
+		console.log('Warning! Your balance is almost 0!')
+	} else {
+		console.log('Normal')
+	}
+}
 
 /////////////////////////////////////////////////////////
 // Calculate Current Balance
 
 // Add function to calculate and return current balance
-
+function getCurrentBalance(currentBalance, transactionsLog) {
+	for (let i of Object.values(transactionsLog)) {
+		currentBalance += i;
+		if (currentBalance < 0) {
+			currentBalance -= 25;
+		}
+	}
+	return currentBalance
+}
+console.log(getCurrentBalance(100, {'may2' : -5}))
 
 /////////////////////////////////////////////////////////
 // Show Account Activity
