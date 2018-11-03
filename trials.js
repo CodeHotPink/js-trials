@@ -12,7 +12,6 @@ function showProfile(melonName, catchphrase, location) {
 	console.log(`Location: ${location}`);
 }
 
-showProfile('Sock', 'Put a sock in it', 'SF')
 
 /////////////////////////////////////////////////////////
 // Display Likes
@@ -21,6 +20,14 @@ const interests = [
   'seeds',
   'staring at human food'
 ];
+
+function showLikes (likesArray) {
+	console.log('THINGS I LIKE:');
+	for (let i = 0; i < likesArray.length; i++){
+		console.log(`${likesArray[i]}`)
+	}
+	
+}
 
 // Add function to print interests
 
