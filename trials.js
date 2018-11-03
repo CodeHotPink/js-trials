@@ -52,7 +52,8 @@ function showFavorites (favoritesObject) {
 		console.log(`${i}: ${k}`);
 	}
 }
-showFavorites(favorites)
+
+
 /////////////////////////////////////////////////////////
 // PART 2
 
@@ -93,8 +94,8 @@ function getBalanceStatus(currentBalance) {
 // Calculate Current Balance
 
 // Add function to calculate and return current balance
-function getCurrentBalance(currentBalance, transactionsLog) {
-	for (let i of Object.values(transactionsLog)) {
+function getCurrentBalance(currentBalance, transactionsHistory) {
+	for (let i of Object.values(transactionsHistory)) {
 		currentBalance += i;
 		if (currentBalance < 0) {
 			currentBalance -= 25;
@@ -102,7 +103,7 @@ function getCurrentBalance(currentBalance, transactionsLog) {
 	}
 	return currentBalance
 }
-console.log(getCurrentBalance(100, {'may2' : -5}))
+
 
 /////////////////////////////////////////////////////////
 // Show Account Activity
